@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="/style/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1 class="pokedex-title">
+        <svg
+          class="pokeball-icon"
+          viewBox="0 0 496 496"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+        >
+          <!-- Outer circle -->
+          <circle
+            cx="248"
+            cy="248"
+            r="240"
+            stroke="black"
+            stroke-width="16"
+            fill="#fff"
+          />
+
+          <!-- Top half red -->
+          <path
+            d="M248 8a240 240 0 0 1 240 240h-160a80 80 0 0 0-160 0H8A240 240 0 0 1 248 8z"
+            fill="#ef5350"
+          />
+
+          <!-- Inner white circle -->
+          <circle
+            cx="248"
+            cy="248"
+            r="56"
+            fill="white"
+            stroke="black"
+            stroke-width="12"
+          />
+
+          <!-- Inner red core -->
+          <circle
+            cx="248"
+            cy="248"
+            r="24"
+            fill="#ef5350"
+            stroke="black"
+            stroke-width="6"
+          />
+        </svg>
+        Pokédex
+      </h1>
+
+      <div class="controls">
+        <input type="text" id="search" placeholder="Buscar por nombre" />
+        <select id="typeFilter">
+          <option value="">Todos los tipos</option>
+        </select>
+        <select id="sort">
+          <option value="id">Ordenar por ID</option>
+          <option value="name">Ordenar por Nombre</option>
+        </select>
+        <button id="toggleFavorites">⭐ Ver Favoritos</button>
+      </div>
+    </header>
+
+    <main>
+      <div id="loader" class="hidden">Cargando...</div>
+      <div id="pokemonList" class="card-grid"></div>
+      <div id="error" class="hidden"></div>
+      <p id="noResults" class="hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24"
+          width="24"
+          style="vertical-align: middle; margin-right: 0.5rem; fill: #ef5350"
+        >
+          <path d="M1 21 12 2l11 19Zm12-2v-2h-2v2Zm0-4v-4h-2v4Z" />
+        </svg>
+        NO SE ENCONTRARON RESULTADOS
+      </p>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+  <div id="splashScreen">
+    <div class="boot-sequence">
+      <div class="flash"></div>
+      <div class="logo">Pokédex</div>
+      <p class="boot-text">System Booting...</p>
+    </div>
+  </div>
+</html>
